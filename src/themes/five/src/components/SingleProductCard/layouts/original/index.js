@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { useLanguage, useConfig, useOrder, useUtils, useSession, SingleProductCard as SingleProductCardController } from 'ordering-components'
 import { shape } from '../../../../../../../utils'
@@ -112,6 +112,10 @@ const SingleProductCardUI = React.memo((props) => {
       (useCustomFunctionality && onCustomClick && onCustomClick())
   }
 
+  useEffect(()=>{
+    console.log(product)
+  }, [])
+
   const closeAlert = () => {
     setAlertState({
       open: false,
@@ -184,7 +188,7 @@ const SingleProductCardUI = React.memo((props) => {
                   </TitleWrapper>
                   {!isSkeleton ? (
                     <PriceWrapper isOffPrice={product?.offer_price && product?.in_offer}>
-                      <span className='current-price'>{product?.price ? parsePrice(product?.price) : ''}</span>
+                      <span className='current-price'>{product?.extras?.length > 0 && 'Fra '} {parsePrice(product?.price)} </span>
                       {!(isSoldOut || maxProductQuantity <= 0) && (
                         <span className='off-price'>{product?.offer_price && product?.in_offer ? parsePrice(product?.offer_price) : ''}</span>
                       )}
