@@ -280,14 +280,7 @@ const AddressListUI = (props) => {
                     <span className='radio'>
                       {checkAddress(address) ? <RiRadioButtonFill className='address-checked' /> : <IosRadioButtonOff />}
                     </span>
-                    {showIcons && (
-                      <span className={checkAddress(address) ? 'selected-tag tag' : 'tag'}>
-                        {address?.tag === 'home' && <House />}
-                        {address?.tag === 'office' && <Building />}
-                        {address?.tag === 'favorite' && <Heart />}
-                        {address?.tag === 'other' && <PlusLg />}
-                      </span>
-                    )}
+
                     {(showAddress || showInternalNumber || showZipcode) && (
                       <div className='address'>
                         {

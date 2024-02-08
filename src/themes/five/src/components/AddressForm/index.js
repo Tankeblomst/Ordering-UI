@@ -486,22 +486,7 @@ const AddressFormUI = (props) => {
           ))}
 
           {!formState.loading && formState.error && <p style={{ color: '#c10000' }}>{formState.error}</p>}
-          {!isHideIcons && (
-            <AddressTagSection>
-              <Button className={addressTag === 'home' ? 'active' : ''} bgtransparent type='button' onClick={() => handleAddressTag('home')}>
-                <span><House /></span>
-              </Button>
-              <Button className={addressTag === 'office' ? 'active' : ''} bgtransparent type='button' onClick={() => handleAddressTag('office')}>
-                <span><Building /></span>
-              </Button>
-              <Button className={addressTag === 'favorite' ? 'active' : ''} bgtransparent type='button' onClick={() => handleAddressTag('favorite')}>
-                <span><Heart /></span>
-              </Button>
-              <Button className={addressTag === 'other' ? 'active' : ''} bgtransparent type='button' onClick={() => handleAddressTag('other')}>
-                <span><PlusLg /></span>
-              </Button>
-            </AddressTagSection>
-          )}
+
           {
             props.afterMidElements?.map((MidElement, i) => (
               <React.Fragment key={i}>
