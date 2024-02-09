@@ -141,14 +141,17 @@ export const SwiperWrapper = styled.div`
   }
 
   .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    ${({ theme }) => theme?.business_view?.components?.products?.components?.layout?.type === 'starbucks' && css`
-      border-radius: 50% !important;
-    `}
-  }
+     display: block;
+     width: 45%; /* Adjust this value to control the size of the image */
+     height: auto; /* Height can be auto if the image's aspect ratio is to be maintained */
+     object-fit: contain; !important;
+     border-radius: 10px !important;
+     margin: auto; /* Centers the image horizontally */
+     ${({ theme }) => theme?.business_view?.components?.products?.components?.layout?.type === 'starbucks' && css`
+       border-radius: 50% !important;
+     `}
+   }
+
 
   .active-img {
     ${({ theme }) => theme?.business_view?.components?.products?.components?.layout?.type === 'starbucks' && css`

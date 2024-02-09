@@ -155,21 +155,7 @@ export const BusinessItemAccordion = (props) => {
                 )}
                 <ContentInfo className='info' isStore={isStore} isLogo={!hideBusinessLogo}>
                   <h2>{business?.name}</h2>
-                  {!hideBusinessTime && (
-                    <TimeContainer>
-                      {orderState?.options?.type === 1 ? (
-                        <span>
-                          <FiClock />
-                          {convertHoursToMinutes(business?.delivery_time)}
-                        </span>
-                      ) : (
-                        <span>
-                          <FiClock />
-                          {convertHoursToMinutes(business?.pickup_time)}
-                        </span>
-                      )}
-                    </TimeContainer>
-                  )}
+
                   <div>
                     {handleStoreRedirect && !isCartOnProductsList && !isStore && !isGiftCart && (
                       <span
